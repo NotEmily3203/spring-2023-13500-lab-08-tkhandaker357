@@ -2,7 +2,7 @@
 #include <string>
 #include "imageio.h"
 
-auto invertValue(int value) -> int {
+int invertValue(int value) {
     if (value < 0 || value > 255) {
         return -1;
     }
@@ -10,7 +10,7 @@ auto invertValue(int value) -> int {
     return 255 - value;
 }
 
-auto invertImageColor(std::string imageName) -> void {
+void invertImageColor(std::string imageName) {
     int height, width;
     int image[MAX_H][MAX_W];
     readImage(imageName, image, height, width);
@@ -25,7 +25,7 @@ auto invertImageColor(std::string imageName) -> void {
     writeImage("taskA.pgm", outputImage, height, width);
 }
 
-auto invertRightHalf(std::string imageName) -> void {
+void invertRightHalf(std::string imageName) {
     int height, width;
     int image[MAX_H][MAX_W];
     readImage(imageName, image, height, width);
@@ -45,7 +45,7 @@ auto invertRightHalf(std::string imageName) -> void {
     writeImage("taskB.pgm", outputImage, height, width);
 }
 
-auto addWhiteBox(std::string imageName) -> void {
+void addWhiteBox(std::string imageName) {
     int height, width;
     int image[MAX_H][MAX_W];
     readImage(imageName, image, height, width);
@@ -66,7 +66,7 @@ auto addWhiteBox(std::string imageName) -> void {
     writeImage("taskC.pgm", outputImage, height, width);
 }
 
-auto addBoxFrame(std::string imageName) -> void {
+void addBoxFrame(std::string imageName) {
     int height, width;
     int image[MAX_H][MAX_W];
     readImage(imageName, image, height, width);
@@ -88,7 +88,7 @@ auto addBoxFrame(std::string imageName) -> void {
     writeImage("taskD.pgm", outputImage, height, width);
 }
 
-auto scaleTwice(std::string imageName) -> void {
+void scaleTwice(std::string imageName) {
     int height, width;
     int image[MAX_H][MAX_W];
     readImage(imageName, image, height, width);
@@ -103,7 +103,7 @@ auto scaleTwice(std::string imageName) -> void {
     writeImage("taskE.pgm", outputImage, height * 2, width * 2);
 }
 
-auto pixelate(std::string imageName) -> void {
+void pixelate(std::string imageName) {
     int height, width;
     int image[MAX_H][MAX_W];
     readImage(imageName, image, height, width);
